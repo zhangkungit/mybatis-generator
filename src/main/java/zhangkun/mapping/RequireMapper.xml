@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhangkun.dao.RequireMapper">
+  <resultMap id="BaseResultMap" type="zhangkun.model.Require">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="a_cust_id" jdbcType="VARCHAR" property="aCustId" />
+    <result column="b_cust_id" jdbcType="VARCHAR" property="bCustId" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_require" jdbcType="CHAR" property="isRequire" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, a_cust_id, b_cust_id, msg, status, create_time, is_require
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rrz_relation_require
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rrz_relation_require
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="zhangkun.model.Require">
+    insert into rrz_relation_require (id, a_cust_id, b_cust_id, 
+      msg, status, create_time, 
+      is_require)
+    values (#{id,jdbcType=INTEGER}, #{aCustId,jdbcType=VARCHAR}, #{bCustId,jdbcType=VARCHAR}, 
+      #{msg,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isRequire,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="zhangkun.model.Require">
+    insert into rrz_relation_require
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="aCustId != null">
+        a_cust_id,
+      </if>
+      <if test="bCustId != null">
+        b_cust_id,
+      </if>
+      <if test="msg != null">
+        msg,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isRequire != null">
+        is_require,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="aCustId != null">
+        #{aCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="bCustId != null">
+        #{bCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isRequire != null">
+        #{isRequire,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="zhangkun.model.Require">
+    update rrz_relation_require
+    <set>
+      <if test="aCustId != null">
+        a_cust_id = #{aCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="bCustId != null">
+        b_cust_id = #{bCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        msg = #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isRequire != null">
+        is_require = #{isRequire,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="zhangkun.model.Require">
+    update rrz_relation_require
+    set a_cust_id = #{aCustId,jdbcType=VARCHAR},
+      b_cust_id = #{bCustId,jdbcType=VARCHAR},
+      msg = #{msg,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_require = #{isRequire,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="zhangkun.model.Require">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="a_cust_id" jdbcType="VARCHAR" property="aCustId" />
+    <result column="b_cust_id" jdbcType="VARCHAR" property="bCustId" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_require" jdbcType="CHAR" property="isRequire" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, a_cust_id, b_cust_id, msg, status, create_time, is_require
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rrz_relation_require
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rrz_relation_require
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="zhangkun.model.Require">
+    insert into rrz_relation_require (id, a_cust_id, b_cust_id, 
+      msg, status, create_time, 
+      is_require)
+    values (#{id,jdbcType=INTEGER}, #{aCustId,jdbcType=VARCHAR}, #{bCustId,jdbcType=VARCHAR}, 
+      #{msg,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isRequire,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="zhangkun.model.Require">
+    insert into rrz_relation_require
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="aCustId != null">
+        a_cust_id,
+      </if>
+      <if test="bCustId != null">
+        b_cust_id,
+      </if>
+      <if test="msg != null">
+        msg,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isRequire != null">
+        is_require,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="aCustId != null">
+        #{aCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="bCustId != null">
+        #{bCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isRequire != null">
+        #{isRequire,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="zhangkun.model.Require">
+    update rrz_relation_require
+    <set>
+      <if test="aCustId != null">
+        a_cust_id = #{aCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="bCustId != null">
+        b_cust_id = #{bCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        msg = #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isRequire != null">
+        is_require = #{isRequire,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="zhangkun.model.Require">
+    update rrz_relation_require
+    set a_cust_id = #{aCustId,jdbcType=VARCHAR},
+      b_cust_id = #{bCustId,jdbcType=VARCHAR},
+      msg = #{msg,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_require = #{isRequire,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
